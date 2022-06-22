@@ -1,4 +1,4 @@
-# Static Asset CDN Sharing
+# Static Asset Sharing
 
 ## Usage
 
@@ -16,6 +16,17 @@ https://media.githubusercontent.com/media/John-Gdi/static-asset/main/gif/default
 
 ## 注意事项
 
+#### 使用Azure Repos路径
+
+由于`github`的`lfs`只提供`1GB`的存储空间，当超过的时候会无法使用。可考虑使用`Azure Devops`的路径。
+
+```
+https://dev.azure.com/gdidev/StaticAssets/_apis/git/repositories/StaticAssets/items?path=/gif/signal-event.gif&resolveLfs=true&%24format=octetStream
+```
+
+这里需替换`https://dev.azure.com/gdidev/StaticAssets/_apis/git/repositories/StaticAssets/items?path= [/gif/signal-event.gif] &resolveLfs=true&%24format=octetStream` 中的文件路径。
+
+#### 确保已安装lfs
 本项目已启用`lfs`，请在执行`git add`前确保已经安装`lfs`。如果没有安装，可通过以下命令完成安装：
 
 ```
